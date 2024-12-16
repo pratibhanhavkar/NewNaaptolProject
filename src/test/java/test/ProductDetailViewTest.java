@@ -1,6 +1,8 @@
 package test;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pojo.Browser;
@@ -14,44 +16,54 @@ public class ProductDetailViewTest extends BaseTest{
 	   public void configureReports() {
 		  reports = Reports.createReport();
 	   }
-	@BeforeTest
-	public void lunchApplication() {
-		driver = Browser.LunchApplication();
+	@BeforeMethod
+	public void launchApplication() {
+		driver = Browser.LaunchApplication();
 					}
 	@Test
 	
-	public void VerifyIfProdutDetailsAreCorrectIfViewInQuickView() {
-        test = reports.createTest("VerifyIfProdutDetailsAreCorrectIfViewInQuickView");
+	public void verifyIfProdutDetailsAreCorrectIfViewInQuickView() {
+        test = reports.createTest("verifyIfProdutDetailsAreCorrectIfViewInQuickView");
 		NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-		naaptolhomepage.EnterProductToSearch("mobile");
-		naaptolhomepage.ClickOnSearch();
-		String name = naaptolhomepage.getProductNameFromHomePage(2);
+		naaptolhomepage.enterProductToSearch("mobile");
+		naaptolhomepage.clickOnSearch();
+		String productNameOnHomePage = naaptolhomepage.getProductNameFromHomePage(1);
 		
-		NaaptolProductDetailQuickView NaaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
-		NaaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 2);
-		NaaptolProductDetailQuickView.ClickOnQuickView(2);
+		NaaptolProductDetailQuickView naaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
+		naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 1);
+		naaptolProductDetailQuickView.clickOnQuickView(1);
 	
-		String productname = NaaptolProductDetailQuickView.getProductNameOnQuickView();
+		String productNameOnQuickView = naaptolProductDetailQuickView.getProductNameOnQuickView();
         
-		Assert.assertEquals(name, productname);
+		Assert.assertEquals(productNameOnHomePage, productNameOnQuickView);
 	}
 		
 		@Test
-		public void VerifyProductDetailAreCorrectlyViewUsingProductDetailPage() {
-			 test = reports.createTest("VerifyAddProductToCartUsingProductDetailPage");
+		public void verifyProductDetailsAreCorrectlyViewUsingProductDetailPage() {
+			 test = reports.createTest("verifyAddProductToCartUsingProductDetailPage");
+			 
 			NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-			naaptolhomepage.EnterProductToSearch("mobile");
-			naaptolhomepage.ClickOnSearch();
-			String name = naaptolhomepage.getProductNameFromHomePage(2);
+			naaptolhomepage.enterProductToSearch("mobile");
+			naaptolhomepage.clickOnSearch();
+			
+			String productNameOnHomePage = naaptolhomepage.getProductNameFromHomePage(1);
+			
 			NaaptolProductDetailPage naaptolproductdetailpage = new NaaptolProductDetailPage(driver);
-			naaptolproductdetailpage.selectdesiredProduct(2);
+			naaptolproductdetailpage.selectDesiredProduct(1);
 			switchToChildBrowser();
 			
-			String ProductName = naaptolproductdetailpage.getproductDetailPageProductName();
-			Assert.assertEquals(name, ProductName);
+			String ProductNameOnProductDetailPage = naaptolproductdetailpage.getProductDetailPageProductName();
+			
+			Assert.assertEquals(productNameOnHomePage, ProductNameOnProductDetailPage);
 			
 			
 		}
+		@AfterMethod
+		public void closeBrowser()
+		{
+			driver.close();
+		}
+		
 		
 	
 }	

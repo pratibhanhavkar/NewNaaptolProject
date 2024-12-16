@@ -10,35 +10,33 @@ import org.openqa.selenium.support.PageFactory;
 public class NaaptolHomePage {
 	
 	@FindBy (xpath ="//div[@class='grid_Square ']") private List<WebElement> productList;  //12product
-	@FindBy (xpath="//input[@id='header_search_text']")private WebElement searchfield;
+	@FindBy (xpath="//input[@id='header_search_text']")private WebElement searchField;
 	@FindBy (xpath ="(//div[@class='search']//a)[2]") private WebElement search;
-    @FindBy (xpath="//div[@class='errorMsg']")private WebElement errormsg;
-    @FindBy (xpath="//div[@class='item_title']")private List<WebElement> ProductName;
-   // @FindBy (xpath = "//a[text()='Dual Sim Foldable Flip Mobile With Camera - Gamma (M2 Mini)']")private WebElement ProductName;
-	@FindBy (xpath = "(//span[@class='offer-price'])[2]")private WebElement ProductPriceOnHomePage;
-	//Additional Xpath
+    @FindBy (xpath="//div[@class='errorMsg']")private WebElement errorMessage;
+    @FindBy (xpath="//div[@class='item_title']")private List<WebElement> productName;
+	@FindBy (xpath = "(//span[@class='offer-price'])[2]")private WebElement productPriceOnHomePage;
 	@FindBy (xpath="//a[@id='login-panel-link']")private WebElement login;
-	@FindBy (xpath="//a[text()='Track Order']")private WebElement trackorder;
-    @FindBy (xpath="//select[@id='localization_dropdown']")private List<WebElement> language;
-    @FindBy (xpath="//span[@class='mobApp-Icon']")private WebElement downloadapp;
-    @FindBy (xpath="//span[@class='cartIcon']")private WebElement carticon;
+	@FindBy (xpath="//a[text()='Track Order']")private WebElement trackOrderField;
+    @FindBy (xpath="//select[@id='localization_dropdown']")private List<WebElement> languageField;
+    @FindBy (xpath="//span[@class='mobApp-Icon']")private WebElement downloadAppField;
+    @FindBy (xpath="//span[@class='cartIcon']")private WebElement cartIcon;
   
     
     public NaaptolHomePage(WebDriver driver) {
     	PageFactory.initElements(driver, this);
 	}
 	
-    public void ClickOnSearch() {
+    public void clickOnSearch() {
     	search.click();
     }
-    public void EnterProductToSearch(String product) {
-    	searchfield.sendKeys(product);
+    public void enterProductToSearch(String product) {
+    	searchField.sendKeys(product);
     }
     public void clickOnLogin() {
     	login.click();
     }
-    public void ClickOnTrackOrder() {
-    	trackorder.click();
+    public void clickOnTrackOrder() {
+    	trackOrderField.click();
     }
  
 	public int getNumberOfProductDisplayed() {
@@ -47,14 +45,12 @@ public class NaaptolHomePage {
 	}
 	
 	public String getErrorMessage() {
-		return errormsg.getText();
+		return errorMessage.getText();
 	
 	}
 	public String getProductNameFromHomePage(int index) {
-		return ProductName.get(index).getText();
+		return productName.get(index).getText();
 	}
-	//public String getProductPriceOnHomePage(int index) {
-	//	return ProductPriceOnHomePage.getText();
-	//}
+	
 	
 }

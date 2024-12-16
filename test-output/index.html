@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Automation all programs\FinalProjectNaaptol\testng.xml</span>
+                    <span>C:\New Naaptol Project\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">9 methods, 1 failed,  1 skipped,  7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,10 +103,24 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.ProductDetailViewTest" class="method navigator-link" hash-for-method="VerifyProductDetailAreCorrectlyViewUsingProductDetailPage">VerifyProductDetailAreCorrectlyViewUsingProductDetailPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="test.ProductDetailViewTest" class="method navigator-link" hash-for-method="verifyIfProdutDetailsAreCorrectIfViewInQuickView">verifyIfProdutDetailsAreCorrectIfViewInQuickView</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.ProductDetailViewTest" class="method navigator-link" hash-for-method="verifyProductDetailsAreCorrectlyViewUsingProductDetailPage">verifyProductDetailsAreCorrectlyViewUsingProductDetailPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,12 +131,37 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.ProductDetailViewTest" class="method navigator-link" hash-for-method="VerifyIfProdutDetailsAreCorrectIfViewInQuickView">VerifyIfProdutDetailsAreCorrectIfViewInQuickView</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="test.AddProductToCart" class="method navigator-link" hash-for-method="verifyAddProductToCartUsingQuickView">verifyAddProductToCartUsingQuickView</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.ShoppingCategoriesTest" class="method navigator-link" hash-for-method="VerifyOnClickingShoppingCategories">VerifyOnClickingShoppingCategories</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="test.AddProductToCart" class="method navigator-link" hash-for-method="verifyAddingMultipleProductToCart">verifyAddingMultipleProductToCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.AddProductToCart" class="method navigator-link" hash-for-method="verifyAddproductToCartUsingProductDetailPage">verifyAddproductToCartUsingProductDetailPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.ProductSearchTest" class="method navigator-link" hash-for-method="verifyIfUserIsAbleToSearchInalidProduct">verifyIfUserIsAbleToSearchInalidProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.ProductSearchTest" class="method navigator-link" hash-for-method="verifyIfUserIsAbleToSearchValidProduct">verifyIfUserIsAbleToSearchValidProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.ShoppingCategoriesTest" class="method navigator-link" hash-for-method="verifyOnClickingShoppingCategories">verifyOnClickingShoppingCategories</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.AddProductToCart" class="method navigator-link" hash-for-method="verifyRemoveAproductFromCartList">verifyRemoveAproductFromCartList</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -145,18 +184,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyProductDetailAreCorrectlyViewUsingProductDetailPage">
-                  </a> <!-- VerifyProductDetailAreCorrectlyViewUsingProductDetailPage -->
-                  <span class="method-name">VerifyProductDetailAreCorrectlyViewUsingProductDetailPage</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;javascript:autoSuggestion.headerSearch()&quot;&gt;&lt;/a&gt; is not clickable at point (966, 94). Other element would receive the click: &lt;div id=&quot;square_Details&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=131.0.6778.109)
+                  <a name="verifyIfProdutDetailsAreCorrectIfViewInQuickView">
+                  </a> <!-- verifyIfProdutDetailsAreCorrectIfViewInQuickView -->
+                  <span class="method-name">verifyIfProdutDetailsAreCorrectIfViewInQuickView</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [91e41817eeff6885440e52a5b9a6db25, clickElement {id=f.96095AF8FB1E1088AE34199877DF3092.d.6E10E1E222CE92E8E1AD7C0DAB72AE3A.e.40}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.109, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\prati\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54893}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54893/devtoo..., se:cdpVersion: 131.0.6778.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (91e41817eeff6885440e52a5b9a6db25)] -&gt; xpath: (//div[@class=&apos;search&apos;]//a)[2]]
-Session ID: 91e41817eeff6885440e52a5b9a6db25
+Command: [d2d9d932cf1c5a6b2853814a394c15b3, findElement {value=//input[@id=&apos;header_search_text&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\prati\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58669/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d2d9d932cf1c5a6b2853814a394c15b3
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -164,19 +201,58 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-	at pom.NaaptolHomePage.ClickOnSearch(NaaptolHomePage.java:32)
-	at test.ProductDetailViewTest.VerifyProductDetailAreCorrectlyViewUsingProductDetailPage(ProductDetailViewTest.java:44)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
+	at pom.NaaptolHomePage.enterProductToSearch(NaaptolHomePage.java:33)
+	at test.ProductDetailViewTest.verifyIfProdutDetailsAreCorrectIfViewInQuickView(ProductDetailViewTest.java:27)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 30 stack frames
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">test.ProductDetailViewTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyProductDetailsAreCorrectlyViewUsingProductDetailPage">
+                  </a> <!-- verifyProductDetailsAreCorrectlyViewUsingProductDetailPage -->
+                  <span class="method-name">verifyProductDetailsAreCorrectlyViewUsingProductDetailPage</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d2d9d932cf1c5a6b2853814a394c15b3, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\prati\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58669/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d2d9d932cf1c5a6b2853814a394c15b3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:418)
+	at test.ProductDetailViewTest.closeBrowser(ProductDetailViewTest.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -185,9 +261,9 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyOnClickingShoppingCategories">
-                  </a> <!-- VerifyOnClickingShoppingCategories -->
-                  <span class="method-name">VerifyOnClickingShoppingCategories</span>
+                  <a name="verifyOnClickingShoppingCategories">
+                  </a> <!-- verifyOnClickingShoppingCategories -->
+                  <span class="method-name">verifyOnClickingShoppingCategories</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -195,14 +271,57 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">test.ProductDetailViewTest</span>
+              <span class="class-name">test.ProductSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyIfProdutDetailsAreCorrectIfViewInQuickView">
-                  </a> <!-- VerifyIfProdutDetailsAreCorrectIfViewInQuickView -->
-                  <span class="method-name">VerifyIfProdutDetailsAreCorrectIfViewInQuickView</span>
+                  <a name="verifyIfUserIsAbleToSearchInalidProduct">
+                  </a> <!-- verifyIfUserIsAbleToSearchInalidProduct -->
+                  <span class="method-name">verifyIfUserIsAbleToSearchInalidProduct</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyIfUserIsAbleToSearchValidProduct">
+                  </a> <!-- verifyIfUserIsAbleToSearchValidProduct -->
+                  <span class="method-name">verifyIfUserIsAbleToSearchValidProduct</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.AddProductToCart</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddProductToCartUsingQuickView">
+                  </a> <!-- verifyAddProductToCartUsingQuickView -->
+                  <span class="method-name">verifyAddProductToCartUsingQuickView</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddingMultipleProductToCart">
+                  </a> <!-- verifyAddingMultipleProductToCart -->
+                  <span class="method-name">verifyAddingMultipleProductToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAddproductToCartUsingProductDetailPage">
+                  </a> <!-- verifyAddproductToCartUsingProductDetailPage -->
+                  <span class="method-name">verifyAddproductToCartUsingProductDetailPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyRemoveAproductFromCartList">
+                  </a> <!-- verifyRemoveAproductFromCartList -->
+                  <span class="method-name">verifyRemoveAproductFromCartList</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -210,7 +329,7 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Automation all programs\FinalProjectNaaptol\testng.xml</span>
+            <span class="header-content">C:\New Naaptol Project\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -219,7 +338,9 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;test.ProductSearchTest&quot;/&gt;
       &lt;class name=&quot;test.ProductDetailViewTest&quot;/&gt;
+      &lt;class name=&quot;test.AddProductToCart&quot;/&gt;
       &lt;class name=&quot;test.ShoppingCategoriesTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
@@ -234,7 +355,7 @@ Session ID: 91e41817eeff6885440e52a5b9a6db25
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (4 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -260,24 +381,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(9);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyIfProdutDetailsAreCorrectIfViewInQuickView')
-data.setCell(0, 2, 'test.ProductDetailViewTest')
-data.setCell(0, 3, 4784);
+data.setCell(0, 1, 'verifyAddingMultipleProductToCart')
+data.setCell(0, 2, 'test.AddProductToCart')
+data.setCell(0, 3, 11133);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyProductDetailAreCorrectlyViewUsingProductDetailPage')
-data.setCell(1, 2, 'test.ProductDetailViewTest')
-data.setCell(1, 3, 1432);
+data.setCell(1, 1, 'verifyAddproductToCartUsingProductDetailPage')
+data.setCell(1, 2, 'test.AddProductToCart')
+data.setCell(1, 3, 9028);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'VerifyOnClickingShoppingCategories')
-data.setCell(2, 2, 'test.ShoppingCategoriesTest')
-data.setCell(2, 3, 325);
+data.setCell(2, 1, 'verifyRemoveAproductFromCartList')
+data.setCell(2, 2, 'test.AddProductToCart')
+data.setCell(2, 3, 8661);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyIfUserIsAbleToSearchValidProduct')
+data.setCell(3, 2, 'test.ProductSearchTest')
+data.setCell(3, 3, 7718);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyAddProductToCartUsingQuickView')
+data.setCell(4, 2, 'test.AddProductToCart')
+data.setCell(4, 3, 7664);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyIfUserIsAbleToSearchInalidProduct')
+data.setCell(5, 2, 'test.ProductSearchTest')
+data.setCell(5, 3, 4291);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyOnClickingShoppingCategories')
+data.setCell(6, 2, 'test.ShoppingCategoriesTest')
+data.setCell(6, 3, 235);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyIfProdutDetailsAreCorrectIfViewInQuickView')
+data.setCell(7, 2, 'test.ProductDetailViewTest')
+data.setCell(7, 3, 113);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyProductDetailsAreCorrectlyViewUsingProductDetailPage')
+data.setCell(8, 2, 'test.ProductDetailViewTest')
+data.setCell(8, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 48 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -303,46 +448,148 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.ProductDetailViewTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.AddProductToCart</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">configureReports</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.ProductDetailViewTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">lunchApplication</span>
-                <span class="method-start">220 ms</span>
+                <span class="method-name">configureReports</span>
+                <span class="method-start">314 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">316 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.ProductSearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">configureReports</span>
+                <span class="method-start">61741 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.ShoppingCategoriesTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">configureReports</span>
-                <span class="method-start">8836 ms</span>
+                <span class="method-start">61745 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.ProductSearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">61843 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyIfUserIsAbleToSearchInalidProduct</span>
+                <span class="method-start">109768 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">114066 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">114382 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyIfUserIsAbleToSearchValidProduct</span>
+                <span class="method-start">147688 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">155407 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.ProductDetailViewTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">VerifyIfProdutDetailsAreCorrectIfViewInQuickView</span>
-                <span class="method-start">8905 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">VerifyProductDetailAreCorrectlyViewUsingProductDetailPage</span>
-                <span class="method-start">13698 ms</span>
+                <span class="method-name">verifyIfProdutDetailsAreCorrectIfViewInQuickView</span>
+                <span class="method-start">155687 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">155806 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">155832 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">test.AddProductToCart</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">155834 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddProductToCartUsingQuickView</span>
+                <span class="method-start">169459 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">177125 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">177316 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddingMultipleProductToCart</span>
+                <span class="method-start">198182 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">209317 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">209508 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAddproductToCartUsingProductDetailPage</span>
+                <span class="method-start">221902 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">230932 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">231043 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyRemoveAproductFromCartList</span>
+                <span class="method-start">246907 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">255568 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.ShoppingCategoriesTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">lunchApplication</span>
-                <span class="method-start">15158 ms</span>
+                <span class="method-name">launchApplication</span>
+                <span class="method-start">255659 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">VerifyOnClickingShoppingCategories</span>
-                <span class="method-start">25672 ms</span>
+                <span class="method-name">verifyOnClickingShoppingCategories</span>
+                <span class="method-start">268592 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">268827 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

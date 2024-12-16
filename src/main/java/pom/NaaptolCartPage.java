@@ -13,11 +13,11 @@ public class NaaptolCartPage {
 	@FindBy (xpath = "//li[@class='head_UPrice']") private List<WebElement> productPrice;
 	@FindBy (xpath = "//li[@class='head_ship']") private List<WebElement> shippingPrice;
 	@FindBy (xpath = "//li[@class='head_Amount']") private List<WebElement> orderAmount;
-    @FindBy (xpath="(//a[@class='red_button2'])[2]")private WebElement proceedtocheckout;
-    @FindBy (xpath="//a[text()='Remove']")private WebElement removeproduct; 
-    @FindBy (xpath="//a[text()='Dual Sim Foldable Flip Mobile With Camera - Gamma (M2 Mini)']")private WebElement cartproductname; 
-    @FindBy (xpath="//li[text()='1,999']")private WebElement cartproductprice; 
-    @FindBy (xpath="//button[@class='fancybox-button fancybox-close-small']")private WebElement CrossButton;
+    @FindBy (xpath="(//a[@class='red_button2'])[2]")private WebElement proceedToCheckout;
+    @FindBy (xpath="//a[text()='Remove']")private WebElement removeProduct; 
+    @FindBy (xpath="//a[text()='Dual Sim Foldable Flip Mobile With Camera - Gamma (M2 Mini)']")private WebElement cartProductName; 
+    @FindBy (xpath="//li[text()='1,999']")private WebElement cartProductPrice; 
+    @FindBy (xpath="//button[@class='fancybox-button fancybox-close-small']")private WebElement crossButton;
  
 
 	
@@ -29,22 +29,22 @@ public class NaaptolCartPage {
 		return products.size();
 	}
 	
-	public String getcartProductName() {
-		return cartproductname.getText();
+	public String getCartProductName() {
+		return cartProductName.getText();
 	}
-	public void getcartProductPrice(){
-		String text = cartproductprice.getText();
+	public void getCartProductPrice(){
+		String text = cartProductPrice.getText();
 		System.out.println(text);
 		
 	}	
 	public void verifyRemoveProductFromCart() {
-		removeproduct.click();
+		removeProduct.click();
 	}
-	public void ClickOnCrossButton() {
-		CrossButton.click();
+	public void clickOnCrossButton() {
+		crossButton.click();
 	}
-	public void ClickOnProceedToCheckOut() {
-		proceedtocheckout.click();
+	public void clickOnProceedToCheckOut() {
+		proceedToCheckout.click();
 	}
 }
 

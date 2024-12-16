@@ -5,9 +5,10 @@
     <classes>
       <class name="test.ProductDetailViewTest">
         <methods>
+          <include name="launchApplication"/>
           <include name="configureReports"/>
-          <include name="VerifyIfProdutDetailsAreCorrectIfViewInQuickView"/>
-          <include name="lunchApplication"/>
+          <include name="verifyProductDetailsAreCorrectlyViewUsingProductDetailPage"/>
+          <include name="closeBrowser"/>
         </methods>
       </class> <!-- test.ProductDetailViewTest -->
     </classes>

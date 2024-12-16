@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Browser {
-	public static WebDriver LunchApplication() {
+	public static WebDriver LaunchApplication() {
 	
         WebDriverManager.chromedriver().setup();
 		

@@ -4,15 +4,24 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Browser {
-	public static WebDriver LaunchApplication() {
+	static WebDriver driver;
 	
-        WebDriverManager.chromedriver().setup();
+	public static WebDriver LaunchApplication(String browser) {
 		
-	    WebDriver driver = new ChromeDriver();	
+		if(browser.equalsIgnoreCase("chrome")) {
+			
+			WebDriverManager.chromedriver().setup(); 
+			    driver = new ChromeDriver();	
+		}
+		else if(browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup(); 
+		    driver = new EdgeDriver();	
+		}
 	
 	    driver.get("https://www.naaptol.com/");
 	    driver.manage().window().maximize();

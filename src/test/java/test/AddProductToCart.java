@@ -1,9 +1,12 @@
 package test;
 
+import java.time.Duration;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pojo.Browser;
@@ -18,18 +21,19 @@ public class AddProductToCart extends BaseTest{
 	   public void configureReports() {
 		  reports = Reports.createReport();
 	   }
+	@Parameters({"browser"})
 	@BeforeMethod
-	public void launchApplication() {
-		driver = Browser.LaunchApplication();
+	public void launchApplication(String browser) {
+		driver = Browser.LaunchApplication(browser);
 					}
 	
 	
 	@Test
 	public void verifyAddProductToCartUsingQuickView() {
 		test = reports.createTest("verifyAddProductToCartUsingQuickView");
-		NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-		naaptolhomepage.enterProductToSearch("mobile");
-		naaptolhomepage.clickOnSearch();
+		NaaptolHomePage naaptolHomePage = new NaaptolHomePage(driver);
+		naaptolHomePage.enterProductToSearch("mobile");
+		naaptolHomePage.clickOnSearch();
 		
 		NaaptolProductDetailQuickView naaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
 		naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 1);
@@ -37,27 +41,28 @@ public class AddProductToCart extends BaseTest{
 		
 		NaaptolProductDetailPage naaptolProductDetailPage = new NaaptolProductDetailPage(driver);
 		
-		String ProductDetailProductName = naaptolProductDetailPage.getProductDetailPageProductName();
+		String  productNameOnQuickView = naaptolProductDetailPage.getProductDetailPageProductName();
 		
 	    naaptolProductDetailPage.selectTheColour();
 	    naaptolProductDetailPage.enterPinCode();
 	    naaptolProductDetailPage.clickHereToBuy();
 
-	    NaaptolCartPage  NaaptolCartPage = new NaaptolCartPage(driver);
+	    NaaptolCartPage  naaptolCartPage = new NaaptolCartPage(driver);
 		    
-		String CartProductName= NaaptolCartPage.getCartProductName();
-		Assert.assertEquals( ProductDetailProductName , CartProductName);
+		String cartProductName= naaptolCartPage.getCartProductName();
+		
+		Assert.assertEquals( productNameOnQuickView , cartProductName);
 			
-		NaaptolCartPage.clickOnProceedToCheckOut();
+		naaptolCartPage.clickOnProceedToCheckOut();
 			
 		
 	}
 	@Test
 	public void verifyAddproductToCartUsingProductDetailPage() {
 		test = reports.createTest("verifyAddproductToCartUsingProductDetailPage");
-		NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-		naaptolhomepage.enterProductToSearch("mobile");
-		naaptolhomepage.clickOnSearch();
+		NaaptolHomePage naaptolHomePage = new NaaptolHomePage(driver);
+		naaptolHomePage.enterProductToSearch("mobile");
+		naaptolHomePage.clickOnSearch();
 		
 		NaaptolProductDetailPage naaptolProductDetailPage = new NaaptolProductDetailPage(driver);
 		naaptolProductDetailPage.selectDesiredProduct(1);
@@ -82,26 +87,26 @@ public class AddProductToCart extends BaseTest{
 	public void verifyAddingMultipleProductToCart() {
 	    test = reports.createTest("verifyAddingMultipleProductToCart");
 		
-		NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-		naaptolhomepage.enterProductToSearch("mobile");
-		naaptolhomepage.clickOnSearch();
+		NaaptolHomePage naaptolHomePage = new NaaptolHomePage(driver);
+		naaptolHomePage.enterProductToSearch("mobile");
+		naaptolHomePage.clickOnSearch();
 		
-		NaaptolProductDetailQuickView NaaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
-		NaaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 1);
-		NaaptolProductDetailQuickView.clickOnQuickView(1);
+		NaaptolProductDetailQuickView naaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
+		naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 1);
+		naaptolProductDetailQuickView.clickOnQuickView(1);
 		
-		NaaptolProductDetailPage naaptolproductdetailpage = new NaaptolProductDetailPage(driver);
+		NaaptolProductDetailPage naaptolProductDetailPage = new NaaptolProductDetailPage(driver);
 		
-		naaptolproductdetailpage.selectTheColour();
-		naaptolproductdetailpage.enterPinCode();
-		naaptolproductdetailpage.clickHereToBuy();
-		naaptolproductdetailpage.clickOnContinueShopping();
-		naaptolproductdetailpage.clickOnCrossButton();
+		naaptolProductDetailPage.selectTheColour();
+		naaptolProductDetailPage.enterPinCode();
+		naaptolProductDetailPage.clickHereToBuy();
+		naaptolProductDetailPage.clickOnContinueShopping();
+		naaptolProductDetailPage.clickOnCrossButton();
 		
 		 
-	    NaaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 2);
-		NaaptolProductDetailQuickView.clickOnQuickView(2);
-		naaptolproductdetailpage.clickHereToBuy();
+	    naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 2);
+		naaptolProductDetailQuickView.clickOnQuickView(2);
+		naaptolProductDetailPage.clickHereToBuy();
 		
 		
 		
@@ -109,21 +114,53 @@ public class AddProductToCart extends BaseTest{
 	@Test
 	public void verifyRemoveAproductFromCartList() {
 		test = reports.createTest("verifyRemoveAproductFromCartList");
-		NaaptolHomePage naaptolhomepage = new NaaptolHomePage(driver);
-		naaptolhomepage.enterProductToSearch("mobile");
-		naaptolhomepage.clickOnSearch();
+		NaaptolHomePage naaptolHomePage = new NaaptolHomePage(driver);
+		naaptolHomePage.enterProductToSearch("mobile");
+		naaptolHomePage.clickOnSearch();
 		
-		NaaptolProductDetailPage naaptolproductdetailpage = new NaaptolProductDetailPage(driver);
-		naaptolproductdetailpage.selectDesiredProduct(1);
+		NaaptolProductDetailPage naaptolProductDetailPage = new NaaptolProductDetailPage(driver);
+		naaptolProductDetailPage.selectDesiredProduct(1);
 		switchToChildBrowser();
-		naaptolproductdetailpage.selectTheColour();
-		naaptolproductdetailpage.enterPinCode();
-		naaptolproductdetailpage.clickHereToBuy();
+		naaptolProductDetailPage.selectTheColour();
+		naaptolProductDetailPage.enterPinCode();
+		naaptolProductDetailPage.clickHereToBuy();
 
-		NaaptolCartPage  NaaptolCartPage = new NaaptolCartPage(driver);
-		NaaptolCartPage.verifyRemoveProductFromCart();
+		NaaptolCartPage  naaptolCartPage = new NaaptolCartPage(driver);
+		naaptolCartPage.verifyRemoveProductFromCart();
 		
 	}
+	
+	@Test
+	public void verifyRemoveMultipleProductFromCartList() throws InterruptedException {
+		test = reports.createTest("verifyRemoveMultipleProductFromCartList");
+		NaaptolHomePage naaptolHomePage = new NaaptolHomePage(driver);
+		naaptolHomePage.enterProductToSearch("mobile");
+		naaptolHomePage.clickOnSearch();
+		
+		NaaptolProductDetailQuickView naaptolProductDetailQuickView = new NaaptolProductDetailQuickView(driver);
+		naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 1);
+		naaptolProductDetailQuickView.clickOnQuickView(1);
+		
+		NaaptolProductDetailPage naaptolProductDetailPage = new NaaptolProductDetailPage(driver);
+		
+		naaptolProductDetailPage.selectTheColour();
+		naaptolProductDetailPage.enterPinCode();
+		naaptolProductDetailPage.clickHereToBuy();
+		naaptolProductDetailPage.clickOnContinueShopping();
+		naaptolProductDetailPage.clickOnCrossButton();
+		
+		 
+	    naaptolProductDetailQuickView.moveToQuickviewOnDesiredProduct(driver, 2);
+		naaptolProductDetailQuickView.clickOnQuickView(2);
+		naaptolProductDetailPage.clickHereToBuy();
+		
+		NaaptolCartPage  naaptolCartPage = new NaaptolCartPage(driver);
+		Thread.sleep(5000);
+		naaptolCartPage.verifyRemoveProductFromCart();
+		
+		
+	}
+	
 	
 	@AfterMethod
 	public void closeBrowser()

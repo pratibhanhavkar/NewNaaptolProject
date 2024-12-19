@@ -17,7 +17,7 @@ public class NaaptolProductDetailPage {
     @FindBy (xpath="(//input[@placeholder='Enter mobile number'])[2]")private WebElement mobileNumber;
     @FindBy (xpath="(//input[@class='btn-login btn-blueBg'])[3]")private WebElement continueButton;
     @FindBy (xpath = "//a[text()='Gold']")private WebElement selectColour;
-    @FindBy (xpath ="//h1[text()='Dual Sim Foldable Flip Mobile With Camera - Gamma (M2 Mini)']")private WebElement productName;
+    @FindBy (xpath ="//div[@id='square_Details']//h1")private WebElement productName;
 	@FindBy (xpath = "(//span[@class='offer-price'])[2]")private List<WebElement> productPrice;
     @FindBy (xpath="//button[@class='fancybox-button fancybox-close-small']")private WebElement crossButton;
 	@FindBy (xpath="(//a[@class='link_Continue'])[1]")private WebElement continueShopping;

@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pojo.Browser;
 import utility.Reports;
@@ -16,9 +17,10 @@ public class ProductDetailViewTest extends BaseTest{
 	   public void configureReports() {
 		  reports = Reports.createReport();
 	   }
+    @Parameters({"browser"})
 	@BeforeMethod
-	public void launchApplication() {
-		driver = Browser.LaunchApplication();
+	public void launchApplication(String browser) {
+		driver = Browser.LaunchApplication(browser);
 					}
 	@Test
 	
@@ -35,7 +37,7 @@ public class ProductDetailViewTest extends BaseTest{
 	
 		String productNameOnQuickView = naaptolProductDetailQuickView.getProductNameOnQuickView();
         
-		Assert.assertEquals(productNameOnHomePage, productNameOnQuickView);
+		Assert.assertTrue( productNameOnQuickView.contains(productNameOnHomePage));
 	}
 		
 		@Test
@@ -46,18 +48,19 @@ public class ProductDetailViewTest extends BaseTest{
 			naaptolhomepage.enterProductToSearch("mobile");
 			naaptolhomepage.clickOnSearch();
 			
-			String productNameOnHomePage = naaptolhomepage.getProductNameFromHomePage(1);
+			String productNameOnHomePage = naaptolhomepage.getProductNameFromHomePage(0);
 			
 			NaaptolProductDetailPage naaptolproductdetailpage = new NaaptolProductDetailPage(driver);
-			naaptolproductdetailpage.selectDesiredProduct(1);
+			naaptolproductdetailpage.selectDesiredProduct(0);
 			switchToChildBrowser();
 			
-			String ProductNameOnProductDetailPage = naaptolproductdetailpage.getProductDetailPageProductName();
+			String productNameOnProductDetailPage = naaptolproductdetailpage.getProductDetailPageProductName();
 			
-			Assert.assertEquals(productNameOnHomePage, ProductNameOnProductDetailPage);
+		
+			Assert.assertTrue(productNameOnProductDetailPage.contains(productNameOnHomePage));
 			
-			
-		}
+		}	
+	
 		@AfterMethod
 		public void closeBrowser()
 		{

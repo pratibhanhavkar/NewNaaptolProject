@@ -6,10 +6,13 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class Reports {
 	
 	public static ExtentReports createReport() {
-	    ExtentSparkReporter  htmlReports = new ExtentSparkReporter("NaptoolReports.html");
+	    ExtentSparkReporter  htmlReports = new ExtentSparkReporter("NaaptolReports.html");
 	    ExtentReports reports = new ExtentReports();
 	    reports.attachReporter(htmlReports);
 	    reports.setSystemInfo("ProjectName", "FinalProjectNaaptol");
 		return reports;
+		
+		
+		
 	        } 
 }

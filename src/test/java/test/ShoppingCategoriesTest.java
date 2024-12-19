@@ -3,6 +3,7 @@ package test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pojo.Browser;
@@ -14,9 +15,10 @@ public class ShoppingCategoriesTest extends BaseTest {
 	   public void configureReports() {
 		  reports = Reports.createReport();
 	   }
+    @Parameters({"browser"})
 	@BeforeMethod
-	public void launchApplication() {
-		  driver = Browser.LaunchApplication();
+	public void launchApplication(String browser) {
+		  driver = Browser.LaunchApplication(browser);
 		}
 	
 	@Test
